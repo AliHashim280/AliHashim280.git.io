@@ -6,7 +6,6 @@ body {
     box-sizing: border-box;
     color: #333;
     background-color: #f0f0f0;
-    /* Light background for better contrast */
 }
 
 /* Header */
@@ -18,7 +17,6 @@ header {
     background-color: #1a1a1a;
     color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Adds shadow to header */
 }
 
 header .logo h1 {
@@ -44,13 +42,11 @@ nav ul li a {
     font-weight: 700;
     font-size: 16px;
     transition: color 0.3s ease, transform 0.3s ease;
-    /* Adds transition for hover effects */
 }
 
 nav ul li a:hover {
     color: #ff6f61;
     transform: translateY(-2px);
-    /* Subtle lift effect on hover */
 }
 
 /* Banner */
@@ -63,33 +59,27 @@ nav ul li a:hover {
     text-align: center;
     color: #fff;
     padding: 0 20px;
-    /* Adds padding for mobile responsiveness */
 }
 
 .banner-content h2 {
     font-size: 4rem;
-    /* Responsive font size */
     margin-bottom: 20px;
 }
 
 .banner-content p {
     color: white;
     font-size: 1.25rem;
-    /* Responsive font size */
     margin-bottom: 30px;
 }
 
 /* Improved Paragraph Styling */
 p {
     font-size: 1rem;
-    /* Adjust font size */
     line-height: 1.6;
-    /* Improve readability */
     margin-bottom: 20px;
-    /* Space between paragraphs */
     color: #555;
-    /* Slightly lighter text color for better contrast */
 }
+
 .col p,.col{
     color: white;
     font-weight: 700;
@@ -101,10 +91,8 @@ p {
     color: #fff;
     padding: 10px 20px;
     border-radius: 30px;
-    /* Rounded corners */
     transition: background-color 0.3s ease;
     display: inline-block;
-    /* Ensures the tag fits the content */
 }
 
 /* Buttons */
@@ -114,18 +102,14 @@ p {
     padding: 12px 24px;
     text-decoration: none;
     border-radius: 30px;
-    /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Adds shadow to buttons */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover,
 .tag:hover {
     background-color: #e65c50;
-    /* Darker shade on hover */
     transform: translateY(-2px);
-    /* Subtle lift effect on hover */
 }
 
 /* Projects Section */
@@ -152,9 +136,7 @@ p {
     background-color: #fff;
     padding: 20px;
     border-radius: 15px;
-    /* Rounded corners */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    /* Deep shadow effect */
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
@@ -169,7 +151,6 @@ p {
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    /* Deepens shadow on hover */
 }
 
 /* Sections */
@@ -201,7 +182,6 @@ a {
     background-color: rgb(46, 182, 220);
     color: white;
     padding: 5px 10px;
-    /* Adjusted padding */
     border: 2px solid rgb(85, 214, 234);
     border-radius: 30px;
     font-size: 14px;
@@ -212,4 +192,107 @@ a:hover {
     background-color: rgb(35, 163, 205);
     color: #fff;
     border-color: rgb(35, 163, 205);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px;
+    }
+
+    .banner-content h2 {
+        font-size: 3rem;
+    }
+
+    .banner-content p {
+        font-size: 1rem;
+    }
+
+    .projects-section {
+        padding: 30px;
+    }
+
+    .projects-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .banner {
+        height: 60vh;
+        padding: 20px;
+    }
+
+    .banner-content h2 {
+        font-size: 2rem;
+    }
+
+    .banner-content p {
+        font-size: 1rem;
+    }
+
+    .projects-section {
+        height: auto;
+        padding: 20px;
+    }
+
+    .projects-section h2 {
+        font-size: 2rem;
+    }
+
+    .project-card {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+
+    .header, .footer {
+        text-align: center;
+    }
+
+    .header .logo h1 {
+        font-size: 20px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .banner-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .banner-content p {
+        font-size: 0.875rem;
+    }
+
+    .projects-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-card {
+        padding: 8px;
+    }
 }
