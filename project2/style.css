@@ -50,7 +50,7 @@ a {
     justify-content: center;
     align-items: center;
     width: 355px;
-    height: 98vh;
+    height: auto;
     padding: 10px;
     border: 2px solid rgb(207, 207, 207);
     border-radius: 10px;
