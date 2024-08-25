@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam:wght@400;700&display=swap');
+
+:root {
+    --font-primary: "New Amsterdam", sans-serif;
+    --color-header-bg: linear-gradient(70deg, red, yellow);
+    --color-container-bg: linear-gradient(135deg, pink, orange);
+    --color-box1-bg: linear-gradient(135deg, yellow, #ff862a);
+    --color-box2-bg: linear-gradient(135deg, aqua, rgb(0, 194, 0));
+    --color-border: aqua;
+    --border-radius: 20px;
+    --padding: 20px;
+    --ddpadding: 30px;
+    --color-footer-bg: linear-gradient(135deg, #ff8c00, #ff6347);
+    --color-footer-text: #ffffff;
+    --transform-time: transform .5s;
+    --shadow-time: .5s;
+    --def-time: .5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 200vh;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-primary);
+    color: white;
+    background: var(--color-header-bg);
+    height: 10vh;
+    padding: 0 var(--padding);
+    margin-bottom: var(--padding);
+}
+
+.header nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.header nav ul li {
+    padding: var(--padding);
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header nav ul li a:hover {
+
+    text-decoration: underline 3px red;
+}
+
+h1 {
+    margin-right: auto;
+    font-size: 2rem;
+    font-family: var(--font-primary);
+    font-weight: 500;
+}
+.footer h1{
+    text-decoration: underline;
+
+}
+
+.containor {
+    background: var(--color-container-bg);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+}
+
+.box1,
+.box2 {
+    padding: var(--padding);
+    border-radius: 30px;
+    transition: var(--transform-time), var(--shadow-time);
+}
+
+.box1:hover,
+.box2:hover {
+    transform: translateY(-10px);
+    box-shadow:  4px 7px 5px 1px aqua;
+}
+
+.box1 {
+    background: var(--color-box1-bg);
+    margin: 0 20px;
+}
+
+.box2 {
+    background: var(--color-box2-bg);
+}
+
+#logo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    opacity: 0.9;
+}
+
+.footer {
+    margin: 10px;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    background: var(--color-footer-bg);
+    color: var(--color-footer-text);
+    text-align: center;
+}
+
+[data-x="foot"] {
+    color: white;
+}
