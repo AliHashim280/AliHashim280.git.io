@@ -1,0 +1,139 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+}
+
+nav {
+    background-color: #ff6347;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+nav .nav-links li {
+    margin-left: 20px;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: #ffd700;
+}
+
+#meme-container {
+    margin-top: 20px;
+}
+
+.meme-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.meme-container.left {
+    flex-direction: row;
+}
+
+.meme-container.right {
+    flex-direction: row-reverse;
+}
+
+.meme-container video {
+    width: 40%;
+    border-radius: 10px;
+}
+
+.meme-container .description {
+    width: 50%;
+    padding: 10px;
+}
+
+.meme-container .description h2 {
+    font-size: 22px;
+    color: #ff6347;
+}
+
+.meme-container .description p {
+    font-size: 18px;
+    color: #555;
+}
+
+.meme-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .meme-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .meme-container video {
+        width: 80%;
+    }
+
+    .meme-container .description {
+        width: 90%;
+        margin-top: 10px;
+    }
+
+    nav .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav .nav-links li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #ff6347;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+#ff6347
