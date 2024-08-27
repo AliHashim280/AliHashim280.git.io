@@ -296,3 +296,6 @@ a:hover {
         padding: 8px;
     }
 }
+.overflow{
+    overflow: auto;
+}
