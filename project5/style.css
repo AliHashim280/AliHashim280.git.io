@@ -1,0 +1,290 @@
+:root {
+    --font-primary: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    --color-text: #222222;
+    --color-bg: #ffffff;
+    --color-nav-bg: #ffffff;
+    --spacing: 20px;
+    --spacing-large: 50px;
+    --logo-width: 65%;
+    --nav-width: 93vw;
+    --nav-items-width: 50vw;
+    --font-size-small: 1rem;
+    --font-size-medium: 1.7rem;
+    --font-size-large: 3rem;
+    --word-spacing: 10px;
+    --size: 90vw;
+}
+
+body {
+    font-family: var(--font-primary);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation */
+.nav-container {
+    width: var(--nav-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing);
+    margin: 0 auto;
+    background-color: var(--color-nav-bg);
+}
+
+#logo-container {
+    margin-right: auto;
+}
+
+#logo {
+    width: var(--logo-width);
+}
+
+.nav-container .list-items {
+    display: flex;
+    justify-content: space-evenly;
+    width: var(--nav-items-width);
+    list-style: none;
+    color: var(--color-text);
+}
+
+/* Content Boxes */
+.box,
+.text {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 0 var(--spacing);
+    margin: var(--spacing-large);
+    width: var(--size);
+}
+
+.box {
+    font-size: var(--font-size-small);
+    word-spacing: var(--word-spacing);
+}
+
+.text {
+    font-size: var(--font-size-medium);
+    text-align: center;
+}
+
+/* Ratings */
+#ratings {
+    align-self: last baseline;
+    margin: 0 10px;
+}
+
+/* Font Size */
+.font {
+    font-size: var(--font-size-large);
+}
+
+/* Button */
+.button {
+    margin: auto;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+.button a {
+    padding: 13px 25px;
+    border: 2px solid;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #00b6d1;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.button a:hover {
+    background-color: #00a8c2;
+}
+
+/* Heading */
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0px;
+    width: 85vw;
+    margin: auto;
+}
+
+.heading .logo {
+    width: 80px;
+}
+
+.heading img {
+    width: 100%;
+    height: auto;
+}
+
+.heading .text {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    width: 100%;
+    margin: 0;
+}
+
+.heading small {
+    font-size: 1rem;
+    padding: 0 5px;
+}
+
+.heading a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.merch-items {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: var(--size);
+    margin: auto;
+    gap: 15px;
+
+}
+
+.card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    width: 25vw;
+    padding: 15px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.card .language-name {
+    width: 100%;
+    text-align: center;
+
+}
+
+.card .language-description {
+    width: 100%;
+    text-align: center;
+    font-size: 0.7rem;
+    margin: 20px 0 10px 0;
+}
+
+.card a {
+    background-color: #5cb85c;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 7px;
+    margin: auto;
+    font-weight: bold;
+}
+
+.card a:hover {
+    background-color: #4b994b;
+}
+
+.card .hash-label {
+    font-size: 0.7rem;
+    margin: auto;
+    font-weight: 400;
+}
+
+.card .hash-code {
+    width: 100%;
+    font-size: 0.5rem;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    word-break: break-all;
+}
+
+/* Base styles for mobile */
+@media (max-width: 768px) {
+    :root {
+        --font-size-small: 0.9rem;
+        --font-size-medium: 1.5rem;
+        --font-size-large: 2.5rem;
+        --spacing: 10px;
+        --spacing-large: 30px;
+        --logo-width: 80%;
+        --nav-width: 100vw;
+        --nav-items-width: 100vw;
+        --size: 95vw;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: var(--spacing);
+    }
+
+    #logo {
+        width: var(--logo-width);
+        margin-bottom: var(--spacing);
+    }
+
+    .nav-container .list-items {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: var(--spacing);
+    }
+
+    .box,
+    .text {
+        padding: 0 var(--spacing);
+        margin: var(--spacing);
+        width: var(--size);
+    }
+
+    .card {
+        width: 90vw;
+        height: auto;
+        padding: 10px;
+        margin: var(--spacing);
+    }
+
+    .card .language-name {
+        font-size: var(--font-size-medium);
+    }
+
+    .card .language-description {
+        font-size: var(--font-size-small);
+        margin: var(--spacing) 0;
+    }
+
+    .card .hash-label,
+    .card .hash-code {
+        font-size: 0.6rem;
+    }
+
+    .button a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .heading {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: var(--spacing);
+    }
+
+    .heading .logo {
+        width: 60px;
+    }
+}
