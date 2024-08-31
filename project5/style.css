@@ -89,7 +89,8 @@ body {
 .button {
     margin: auto;
     width: fit-content;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .button a {
@@ -101,6 +102,7 @@ body {
     background-color: #00b6d1;
     text-transform: uppercase;
     font-weight: bold;
+
 }
 
 .button a:hover {
@@ -147,10 +149,10 @@ body {
 
 .merch-items {
     padding: 20px;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    grid-template-columns: 30% 30% 30%;
     width: var(--size);
     margin: auto;
     gap: 15px;
@@ -158,7 +160,7 @@ body {
 }
 
 .card {
-    background-color: #f9f9f9;
+    background-color: #efefef;
     border-radius: 10px;
     width: 25vw;
     padding: 15px;
@@ -212,6 +214,45 @@ body {
     word-break: break-all;
 }
 
+/* Add this to your style.css */
+
+footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-section {
+    margin: 10px;
+    flex: 1 1 200px;
+}
+
+.footer-section h3 {
+    margin-top: 0;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+
 /* Base styles for mobile */
 @media (max-width: 768px) {
     :root {
@@ -251,11 +292,17 @@ body {
         width: var(--size);
     }
 
+    .merch-items {
+        margin: auto;
+        grid-template-columns: 100%;
+        justify-content: center;
+    }
+
     .card {
         width: 90vw;
         height: auto;
         padding: 10px;
-        margin: var(--spacing);
+        margin: auto;
     }
 
     .card .language-name {
@@ -272,9 +319,15 @@ body {
         font-size: 0.6rem;
     }
 
+    .card .hash-code {
+        display: flex;
+        justify-content: center;
+    }
+
     .button a {
         padding: 10px 20px;
         font-size: 0.9rem;
+
     }
 
     .heading {
