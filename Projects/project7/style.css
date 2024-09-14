@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Reset and Box-Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Variables */
+:root {
+    --text-col: rgb(209, 215, 226);
+    --hover-col: #0073ff2f;
+    --main-grad: linear-gradient(to bottom right, #44bdff, #0071FF);
+    --sec-text-col: #858992;
+    --sec-col: #1e232b;
+    --prem: rgb(255, 208, 68);
+    --btn-col: #0071FF;
+}
+
+/* Body Styling */
+body {
+    background-color: black;
+    color: var(--text-col);
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+
+}
+
+.mar {
+    margin: 30px auto;
+}
+
+.mar-10 {
+    margin: 10px auto;
+}
+
+
+
+.img-bor {
+    border-radius: 5px;
+}
+
+/* Anchor Links */
+a {
+    text-decoration: none;
+    color: var(--text-col);
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 60px;
+    padding: 6px 10px;
+    color: var(--text-col);
+    box-shadow: 0 0 0px 1px rgb(43, 43, 43);
+}
+
+/* Logo Section */
+nav .logo {
+    display: flex;
+    align-items: center;
+    width: 212px;
+    gap: 15px;
+    border-radius: 30px;
+    font-size: 16px;
+    padding: 0;
+}
+
+nav .logo:hover {
+    background-color: var(--hover-col);
+}
+
+/* Logo Image */
+nav .logo img {
+    width: 50px;
+}
+
+/* Navigation Links */
+.links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+
+    padding: 0 15px;
+    color: var(--text-col);
+    border-bottom: 4px solid transparent;
+    transition: all 0.2s ease-in-out;
+    font-weight: 400;
+}
+
+/* Hover Effect for Links */
+.links a:hover {
+    border-bottom: 4px solid #0071FF;
+    background-color: var(--hover-col);
+}
+
+.sidebar {
+    padding: 20px 10px 10px 0;
+    width: 60vw;
+    background-color: black;
+    position: fixed;
+    right: -150vw;
+    border-radius: 10px;
+    height: 60vh;
+    display: none;
+    transition: all 1s ease-in-out;
+
+}
+
+
+.sidebar .links {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.sidebar .links a {
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+
+
+}
+
+.sidebar-active {
+    right: 0;
+}
+
+.hamburger {
+    width: 20px;
+    height: 30px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.active .line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.active .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+#side-hamburger {
+    position: absolute;
+    right: 0;
+
+
+}
+
+/*----------------------MAIN---------------------------------------*/
+.gradient-text {
+    background-image: var(--main-grad);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+}
+
+.heading {
+    margin-top: 53px;
+    width: 99vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-col);
+}
+
+.containor {
+    width: 87vw;
+    margin: 50px auto;
+    display: flex;
+    gap: 25px;
+
+}
+
+.containor img {
+    width: 400px;
+    height: 225px;
+
+}
+
+.premium {
+    padding: 3px 10px;
+    color: var(--prem);
+    border: 1px solid var(--prem);
+    font-size: 16px;
+    height: fit-content;
+    width: fit-content;
+    font-weight: 600;
+
+}
+
+.cont-box h3 {
+    font-size: 1.5rem;
+}
+
+.cont-box .ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cont-box .ul li {
+    color: var(--sec-text-col);
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    margin-bottom: 3px;
+
+}
+
+.cont-box .ul li::before {
+    content: url(tick.svg);
+
+}
+
+.btn-box {
+    display: flex;
+    width: 100%;
+    padding: 0 10px;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-prem,
+.btn-norm {
+    padding: 8px 35px;
+    color: var(--text-col);
+    background-color: var(--btn-col);
+    border: none;
+    font-weight: 500;
+    font-size: 16px;
+    width: fit-content;
+    border-radius: 2px;
+    font-family: "poppins", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease-in-out;
+
+
+}
+
+.btn-norm a,
+.btn-prem a {
+
+    font-weight: 600;
+    font-size: 16px;
+
+
+}
+
+.btn-prem:hover {
+    background-color: var(--prem);
+    color: black;
+
+}
+
+.btn-prem:hover {
+    a {
+        color: black;
+    }
+}
+
+.btn-norm {
+    background-color: var(--sec-col);
+}
+
+.btn-blue:hover {
+    background-color: var(--btn-col);
+}
+
+.yt-cont {
+    max-width: 87vw;
+    margin: 30px auto;
+
+    height: fit-content;
+}
+
+.yt-cont iframe {
+    width: 100%;
+    border-radius: 5px;
+    aspect-ratio: 16/9;
+
+
+}
+
+.card-ul {
+    list-style: decimal;
+    list-style-position: inside;
+
+}
+
+.card-ul li {
+    margin: 5px 0;
+}
+
+
+
+
+/* For tablets and smaller desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .containor {
+        width: 85vw;
+
+    }
+
+
+    .heading {
+        font-size: 28px;
+
+    }
+
+
+
+
+
+    .btn-prem,
+    .btn-norm {
+        padding: 10px 20px;
+
+        font-size: 14px;
+
+    }
+
+
+
+    .card-ul {
+        padding-left: 20px;
+
+    }
+}
+
+
+
+
+
+
+/* For mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .sidebar {
+        display: flex;
+    }
+
+    .containor {
+        flex-direction: column;
+        /* Stack container items vertically */
+
+
+    }
+
+
+    .heading {
+        font-size: 24px;
+        /* Further reduce heading font size */
+        text-align: center;
+        /* Center-align heading text */
+    }
+
+
+
+
+
+
+
+
+
+    .btn-prem,
+    .btn-norm {
+        padding: 12px 25px;
+        /* Adjust button padding */
+        font-size: 14px;
+
+    }
+
+
+    .containor .cont-box {
+        padding: 15px;
+        /* Add padding to content boxes */
+    }
+}
+
+
+
+
+/* For very small mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .heading {
+        font-size: 20px;
+        /* Reduce heading font size further */
+    }
+
+    .btn-box {
+        padding: 0 5px;
+        /* Adjust padding for small screens */
+    }
+
+    .btn-prem,
+    .btn-norm {
+        padding: 8px 20px;
+        /* Further adjust button padding */
+        font-size: 12px;
+        /* Reduce font size */
+    }
+
+
+
+    .containor .cont-box {
+        padding: 10px;
+        /* Adjust padding */
+    }
+
+    .containor img {
+        max-width: 80vw;
+        height: auto;
+    }
+}
