@@ -1,0 +1,82 @@
+body {
+    overflow-x: hidden;
+}
+
+.side-pos {
+    position: absolute;
+    right: -200vw;
+    transition: all 0.5s ease-in-out;
+    display: hidden;
+    border: 3px solid #D1D5DB;
+}
+
+
+.Sidebar {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: 70vh;
+
+}
+
+.round-side {
+    border-top-left-radius: 20px;
+}
+
+
+
+
+.sidebar-link {
+    padding: 0.25rem 1rem;
+    margin-top: 1rem;
+    font-size: .9rem;
+    font-weight: 600;
+    background: transparent;
+    border-radius: 0.5rem;
+    color: #E5E7EB;
+    /* Light gray for dark mode */
+    transition: all 0.3s ease;
+
+}
+
+.sidebar-link:hover {
+
+    color: #1F2937;
+    /* Darker text on hover */
+    background-color: #E5E7EB;
+    /* Light gray background on hover */
+}
+
+.sidebar-link:focus {
+    outline: none;
+    background-color: #E5E7EB;
+    color: #1F2937;
+    box-shadow: 0 0 0 2px #D1D5DB;
+    /* Focus ring effect */
+}
+
+
+
+.side-active {
+    right: 0;
+    display: block;
+}
+
+
+.m-auto {
+    margin: auto;
+}
+
+
+@media (min-width:768px) {
+    #hamburger {
+        display: none;
+    }
+
+    #sidebar {
+        display: none;
+
+    }
+
+}
