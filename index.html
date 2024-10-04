@@ -3,123 +3,331 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ali's Projects</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/48bec16d56.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="assets/Favicon.png">
+    <title>ALI | Portfolio</title>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1>Ali's Portfolio</h1>
+    <header class="sticky top-0 z-50 text-gray-400 bg-gray-900 body-font">
+        <div class="w-full text-gray-400 bg-gray-900 body-font">
+            <div x-data="{ open: false }"
+                class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+                <div class="p-4 flex flex-row items-center justify-between">
+                    <a href="#"
+                        class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg focus:outline-none focus:shadow-outline zoom">ALI</a>
+                    <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                            <path x-show="!open" fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                            <path x-show="open" fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <nav :class="{'flex': open, 'hidden': !open}"
+                    class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+                    <a class="px-1 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline zoom"
+                        href="/">HOME</a>
+
+                    <a class="px-1 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline zoom"
+                        href="#about">ABOUT</a>
+                    <a class="px-1 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline zoom"
+                        href="#skills">SKILLS</a>
+                    <a class="px-1 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline zoom"
+                        href="#projects">PROJECTS</a>
+                    <a class="px-1 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline zoom"
+                        href="#contact">CONTACT</a>
+                </nav>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section id="home" class="banner">
-        <div class="banner-content">
-            <h2>Welcome to My Web Portfolio</h2>
-            <p>Explore my projects in this website.
-                I am gonna post my web projects to this website, so that you might see those, so yah! it is My portfolio
-                Web.
-            </p>
-            <a href="#projects" class="btn">View Projects</a>
+    <section id="home" class="text-gray-400 bg-gray-800 body-font bg-fixed"
+        style="background-image:url(assets/bg.jpg);">
+        <div class="container mx-auto flex px-5 py-28 items-center justify-center flex-col">
+            <div class="text-center lg:w-2/3 w-full">
+                <h1 class="title-font sm:text-6xl text-3xl mb-4 font-medium text-white filter drop-shadow-lg">Hi, I am
+                    ALI!</h1>
+                <p class="leading-relaxed sm:text-2xl mb-8 filter drop-shadow-lg">Welcome to my Portfolio !</p>
+                <div class="flex justify-center">
+                </div>
+            </div>
+            <img class="lg:w-1/4 md:w-3/6 w-5/6 mb-4 object-cover object-center rounded" alt="hero"
+                src="assets/logo.jpg">
+        </div>
+    </section>
+    <!--Home Section-->
+    <section class=" text-gray-400 bg-gray-900 body-font" id="about">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-col text-center w-full mb-20">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">About Me!</h1>
+                <span class="self-center inline-block h-1 w-28 rounded bg-blue-500 mt-2 mb-8"></span>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base white">I am Ali Hashim, a young and passionate
+                    Python coder
+                    I have a strong command of Python, HTML, and CSS. Beyond coding, I'm a creative web developer and a
+                    tech enthusiast, always eager to dive into the latest trends in technology. I'm also into anime,
+                    computers, and science, and I enjoy learning on my own terms, constantly pushing myself to grow. If
+                    you want to connect or View It about what I do, feel free to reach out to me via email or social
+                    media.
+                </p>
+            </div>
         </div>
     </section>
 
-    <section id="projects" class="projects-section overflow">
-        <h2 class="tag">My Projects</h2>
-        <div class="projects-grid">
-            <a href="Projects/project1/index.html" class="project-card">
-                <h3>1. Video Player</h3>
-                <p>🎥 Ready for a little eye candy? This sleek video player is packed with memes that'll make you smile
-                    and keep you hooked. Dive in and let the fun begin. 😏</p>
-            </a>
-            <a href="Projects/project2/index.html" class="project-card">
-                <h3>2. Nature Card</h3>
-                <p>🌿 Curious about nature? This card serves up some tantalizing facts with a touch of whimsy. It's a
-                    simple delight that’s sure to captivate and intrigue. 🍃😉</p>
-            </a>
-            <a href="Projects/project3/index.html" class="project-card">
-                <h3>3. Layout Practice</h3>
-                <p>🔨 Dive into my latest layout practice! Inspired by Code with Harry, this exercise is all about
-                    turning simple design into something that pops. Check it out and be impressed. 😜💡</p>
-            </a>
-            <a href="Projects/project4/index.html" class="project-card">
-                <h3>4. Meme Land (2.0)</h3>
-                <p>🔥 Ready to Get Naughty? 🔥 Dive into our collection of sizzling memes and cheeky videos that'll make
-                    you laugh, blush, and crave more. Enjoy a playful twist on your daily dose of fun—where every scroll
-                    is a tease and every click is a thrill. 😏🍑 Let the games begin!</p>
-            </a>
 
-            <a href="Projects/project5/index.html" class="project-card">
-                <h3>5. UltraEdit Thank You Page Clone</h3>
-                <p>🎉 Feeling thankful? Step into this stylish clone of the UltraEdit thank you page! Experience a
-                    sleek design that mirrors the original's thank-you vibes with a touch of playful flair. Explore
-                    vibrant visuals, handy download links, and a delightful layout that makes saying 'thanks' look
-                    so good. Click through and enjoy the ride!! 😄🚀</p>
-            </a>
-
-
-            <a href="Projects/project6/index.html" class="project-card">
-                <h3>6. Code Academy</h3>
-                <p>💻 Ready to code like a pro? Dive into "Code Academy" where we turn programming into play! From
-                    Python to JavaScript, our interactive courses are designed to make learning fun, engaging, and
-                    downright addictive. Whether you’re a beginner or a code ninja, we’ve got the skills to keep you
-                    leveling up. 🎮👨‍💻 Start your coding adventure now and become the tech wizard you’ve always wanted
-                    to be! 🚀🌟</p>
-            </a>
-            <a href="Projects/project7/index.html" class="project-card">
-                <h3>7. Coding2Go Clone</h3>
-                <p>💻🚀 Take your coding skills to the next level with our Coding2Go clone! Explore a sleek, interactive
-                    platform that brings the best features of Coding2Go to your fingertips. Whether you’re diving into
-                    coding challenges or exploring new tutorials, this clone delivers a top-notch experience with a
-                    touch of flair. Get coding and see what you can achieve! 🌟✨</p>
-            </a>
+    <!--Skills Section-->
+    <section class="text-gray-400 bg-gray-800 body-font" id="skills">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="text-center mb-20">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font text-white mb-4">My Skills</h1>
+                <div class="flex mt-6 justify-center">
+                    <div class="w-28 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+                </div>
+            </div>
+            <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+                <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+                    <div
+                        class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 mb-5 flex-shrink-0">
+                        <img alt="testimonial"
+                            class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-800 bg-gray-800 bg-opacity-10"
+                            src="assets/development.svg">
+                    </div>
+                    <div class="flex-grow">
+                        <h2 class="text-white text-lg title-font font-medium mb-3">Programming</h2>
+                        <p class="leading-relaxed text-base"> Bulma, C, Git, GitHub, JavaScript, Jekyll, Python,
+                            Terminal.</p>
+                    </div>
+                </div>
+                <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+                    <div
+                        class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 mb-5 flex-shrink-0">
+                        <img alt="testimonial"
+                            class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-800 bg-gray-800 bg-opacity-10"
+                            src="assets/html.svg">
+                    </div>
+                    <div class="flex-grow">
+                        <h2 class="text-white text-lg title-font font-medium mb-3">Developer </h2>
+                        <p class="leading-relaxed text-base">I am proficient in HTML, CSS, JavaScript, and frameworks
+                            like Bootstrap and TailwindCSS.</p>
+                    </div>
+                </div>
+    </section>
 
 
 
+    <!--Projects Section-->
+    <section class="text-gray-400 bg-gray-900 body-font" id="projects">
+
+
+        <div class="container px-5 py-2 mx-auto">
+            <div class="flex flex-col">
+                <div class="flex mx-auto mt-16 mb-16">
+                    <h1 class="text-white font-medium title-font text-2xl mb-2 sm:mb-0">My Projects</h1>
+                </div>
+            </div>
+            <div class="container flex flex-wrap -mb-10 -mt-4">
+
+                <!--Project 1-->
+                <div class="p-4 md:w-1/3 sm:mb-0 mb-6 zoom ">
+                    <div class="rounded-lg h-64 overflow-hidden ">
+                        <img alt="content" class="object-cover object-center h-full w-full"
+                            src="https://i.ibb.co/d4pXgmh/4c3efc61d2b352618c395187820fcda6.png">
+                    </div>
+                    <h2 class="text-xl font-medium title-font text-white mt-5">Video Player</h2>
+                    <p class="text-base leading-relaxed mt-2">
+                        🎥 Dive into this sleek meme-packed video player for non-stop fun!(Template) 😏
+                    </p>
+                    <a class="text-blue-400 inline-flex items-center mt-3" href="Projects/project1/index.html">View It
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+
+                <!--Project 2-->
+                <div class="p-4 md:w-1/3 sm:mb-0 mb-6 zoom ">
+                    <div class="rounded-lg h-64 overflow-hidden ">
+                        <img alt="content" class="object-cover object-center h-full w-full"
+                            src="https://i.ibb.co/dpsqXZH/nature.jpg">
+                    </div>
+                    <h2 class="text-xl font-medium title-font text-white mt-5">Nature Card</h2>
+                    <p class="text-base leading-relaxed mt-2">🌿 Get a taste of fascinating nature facts with a playful
+                        twist, guaranteed to intrigue and delight! 🍃😉
+                    </p>
+                    <a class="text-blue-400 inline-flex items-center mt-3" href="Projects/project2/index.html">View It
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+
+                <!--Project 3-->
+                <div class="p-4 md:w-1/3 sm:mb-0 mb-6 zoom">
+                    <div class="rounded-lg h-64 overflow-hidden">
+                        <img alt="content" class="object-cover object-center h-full w-full"
+                            src="https://www.wordstream.com/wp-content/uploads/2022/07/website-examples-feature.jpg">
+                    </div>
+                    <h2 class="text-xl font-medium title-font text-white mt-5">Layout Practice</h2>
+                    <p class="text-base leading-relaxed mt-2">🔨 Check out my latest layout practice! Inspired by Code
+                        with Harry, this design turns simplicity into something that pops. Prepare to be impressed! 😜💡
+                        <a class="text-blue-400 inline-flex items-center mt-3" href="Projects/project3/index.html">View
+                            It
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                </div>
+
+
+                <!--Project 4-->
+                <div class="p-4 md:w-1/3 sm:mb-0 mb-6 zoom">
+                    <div class="rounded-lg h-64 overflow-hidden">
+                        <img alt="content" class="object-cover object-center h-full w-full"
+                            src="https://i.ibb.co/NtKsKg2/Screenshot-113-thumbnail-1920x1080.jpg">
+                    </div>
+                    <h2 class="text-xl font-medium title-font text-white mt-5">Meme Land</h2>
+                    <p class="text-base leading-relaxed mt-2">🔥 Ready for some mischief? 🔥 Explore our collection of
+                        spicy memes and cheeky videos that'll make you laugh, blush, and want more. A playful twist
+                        awaits with every scroll—teasing fun and thrilling clicks! 😏🍑 Let the games begin!
+                    </p>
+                    <a class="text-blue-400 inline-flex items-center mt-3" href="Projects/project4/index.html">View It
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+
+
+                <!--Project 5-->
+                <div class="p-4 md:w-1/3 sm:mb-0 mb-6 zoom">
+                    <div class="rounded-lg h-64 overflow-hidden">
+                        <img alt="content" class="object-cover object-center h-full w-full"
+                            src="https://i.ibb.co/zbYZBL8/Ultratextedit.webp">
+                    </div>
+                    <h2 class="text-xl font-medium title-font text-white mt-5">Ultra Text Edit (Thank You) Page clone!
+                    </h2>
+                    <p class="text-base leading-relaxed mt-2">
+                        🎉 Check out this stylish UltraEdit thank you page clone with vibrant visuals and playful flair!
+                        😄🚀
+                    </p>
+                    <a class="text-blue-400 inline-flex items-center mt-3" href="Projects/project5/index.html">View It
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+
+
+
+                <!--Project 6-->
+                <div class="p-4 md:w-1/3 sm:mb-0 mb-6 zoom">
+                    <div class="rounded-lg h-64 overflow-hidden">
+                        <img alt="content" class="object-cover object-center h-full w-full"
+                            src="https://www.classcentral.com/report/wp-content/uploads/2022/04/BCG-Web-Development-NEW-Banner.png">
+                    </div>
+                    <h2 class="text-xl font-medium title-font text-white mt-5">Gemma Code Academy
+                    </h2>
+                    <p class="text-base leading-relaxed mt-2">
+
+                        💻 Ready to code like a pro? Join "Code Academy" for fun, interactive courses from Python to
+                        JavaScript that keep you leveling up! 🎮👨‍💻 Start your coding adventure now! 🚀🌟
+                    </p>
+                    <a class="text-blue-400 inline-flex items-center mt-3" href="Projects/project6/index.html">View It
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+
+
+                <!--Project 7-->
+                <div class="p-4 md:w-1/3 sm:mb-0 mb-6 zoom">
+                    <div class="rounded-lg h-64 overflow-hidden">
+                        <img alt="content" class="object-cover object-center h-full w-full"
+                            src="https://coding2go.com/images/thumbnails/th-course.png">
+                    </div>
+                    <h2 class="text-xl font-medium title-font text-white mt-5">Coding2Go Clone
+                    </h2>
+                    <p class="text-base leading-relaxed mt-2">
+                        ChatGPT
+                        💻🚀 Elevate your coding skills with our Coding2Go clone! Enjoy a sleek, interactive platform
+                        packed with coding challenges and tutorials for a top-notch experience. Get coding and discover
+                        what you can achieve! 🌟✨
+                    </p>
+                    <a class="text-blue-400 inline-flex items-center mt-3" href="Projects/project6/index.html">View It
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
 
 
 
 
 
-            <!-- Add more project cards as needed -->
+
+
+
+
+
+
+
+
+
+                <div class="random"></div>
+
+
+            </div>
         </div>
     </section>
 
-    <section id="about" class="about-section col">
-        <h2 class="tag">About Me</h2>
-        <p>I am just a student who is still stuck in high school, but no worries, it is just my last year. After that, I
-            shall be free. I am not too much, just trying out NEW things. I am currently learning web development, but I
-            want to make my career in Python programming.</p>
-        <p>Following are some of my skills:</p>
-        <ul>
-            <li>Rizz</li>
-            <li>Python Programming</li>
-            <li>C Language</li>
-            <li>HTML & CSS</li>
-            <li>JavaScript (soon)</li>
-        </ul>
-        <p>I am not an expert in these, but the thing is that I know at least something about these languages.</p>
-    </section>
 
-    <section id="contact" class="contact-section">
-        <h2 class="tag">Contact Me</h2>
-        <p>If you are determined to contact me (which I know for sure that you are not), then following are some social
-            links:</p>
-        <ul>
-            <li><a href="mailto:alicodes019@gmail.com">Email 1</a></li>
-        </ul>
+
+    <section class="text-gray-400 bg-gray-800 body-font" id="contact">
+        <div class="container px-5 py-28 mx-auto">
+            <div class="flex flex-col">
+                <div class="text-center mx-auto mt-2 mb-16">
+                    <h1 class="text-white font-medium title-font text-2xl mb-2 sm:mb-0">YOU CAN FIND ME HERE</h1>
+                    <div class="container flex-col space-x-5 mt-4 mb-2 text-white">
+                        <a href="mailto:#" target="_blank"><i class="button-zoom far fa-envelope fa-2x mb-4"></i></a>
+                        <a href="#" target="_blank"><i class="button-zoom fab fa-twitter fa-2x mb-4"></i></a>
+                        <a href="#" target="_blank"><i class="button-zoom fab fa-instagram fa-2x mb-4"></i></a>
+                        <a href="#" target="_blank"><i class="button-zoom fab fa-linkedin fa-2x mb-4"></i></a>
+                        <a href="#" target="_blank"><i class="button-zoom fab fa-github fa-2x mb-4"></i></a>
+                        <a href="#" target="_blank"><i class="button-zoom fab fa-youtube fa-2x mb-4"></i></a>
+                        <a href="#" target="_blank"><i class="button-zoom fab fa-reddit fa-2x mb-4"></i></a>
+                        <a href="#" target="_blank"><i class="button-zoom fab fa-telegram fa-2x mb-4"></i></a>
+                    </div>
+                </div>
+            </div>
     </section>
+    <!--Footer Section-->
+    <footer class="text-gray-400 bg-gray-900 body-font">
+        <div class="container px-5 mx-auto flex items-center flex-col">
+            <div class="sm:w-2/3 text-center py-6">
+                <p>&copy; Harry Bhai(His Portfolio's Clone)</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
