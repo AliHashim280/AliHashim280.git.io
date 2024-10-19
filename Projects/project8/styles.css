@@ -1,0 +1,474 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #275EFE;
+    --primary-dark: #2055EE;
+    --primary-darkest: #133FC0;
+    --background: #1c2841;
+    --text: #FFFFFF;
+    --secondary-text: rgb(170, 170, 170);
+    --highlight: #00bfa5;
+    --loader-start: #DADADA;
+    --loader-mid: #bbbbbb;
+    --loader-end: #969696;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+.container {
+    width: 90vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+ul {
+    list-style-type: disc;
+    display: flex;
+    padding-left: 20px;
+    gap: 20px;
+    height: 100%;
+
+    align-items: center;
+}
+
+ul li::marker {
+    color: var(--secondary-text);
+}
+
+.card {
+    display: flex;
+    min-width: none;
+    width: 100%;
+    border-radius: 5px;
+    gap: 20px;
+    background-color: black;
+    padding: 10px;
+}
+
+.image,
+.image img,
+.skeleton-img {
+    border-radius: 5px;
+
+    width: auto;
+    aspect-ratio: 16/9;
+}
+
+.image {
+    width: 40%;
+}
+
+.image img {
+    object-fit: contain;
+    max-width: 100%;
+}
+
+.skeleton-img {
+    background-color: var(--loader-start);
+    width: 25%;
+    animation: loader 3s ease-in-out infinite;
+    background-size: 200% 100%;
+}
+
+.text {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.stamp {
+    width: 15%;
+    height: max(20%, 20px);
+    color: var(--secondary-text);
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.skeleton-text,
+.title {
+    border-radius: 10px;
+}
+
+.skeleton-text {
+    background-color: var(--loader-mid);
+    height: 30%;
+    animation: loader 3s ease-in-out infinite;
+    background-size: 200% 100%;
+}
+
+.title {
+    height: 30%;
+    width: 100%;
+    min-width: 100px;
+    min-height: 10px;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--text);
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border-radius: 10px;
+    background-color: #2B2B2B;
+    padding: 50px 0;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+}
+
+.box .img {
+    background-image: url("https://www.coding2go.com/logo.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 2px solid var(--highlight);
+}
+
+.data {
+    color: var(--highlight);
+    font-weight: 500;
+    text-decoration: underline dashed;
+}
+
+.entry {
+    position: relative;
+    width: 85%;
+    line-height: 40px;
+    height: 40px;
+}
+
+input {
+    outline: none;
+    position: absolute;
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 60px;
+    height: 60px;
+    padding: 0 30px;
+    border-radius: 10px;
+    border: 2px solid var(--text);
+    background: transparent;
+    color: var(--text);
+}
+
+input:focus,
+input:valid {
+    border: 2px solid #66ff00;
+    color: #66ff00;
+}
+
+
+.label-line {
+    position: absolute;
+    font-size: 1rem;
+    padding: 0 25px;
+    margin: 10px 20px;
+    background-color: #2B2B2B;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+input:focus+label,
+input:valid+label {
+    transform: translate(10px, -28px) scale(0.8);
+    background-color: #2B2B2B;
+}
+
+.m30 {
+    margin: 30px auto;
+}
+
+.submit {
+    background-color: var(--primary);
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 2px solid var(--text);
+    transition: all 0.3s ease;
+}
+
+.submit:focus,
+.submit:hover {
+    background-color: var(--primary-dark);
+}
+
+.heading {
+    background-color: black;
+    color: var(--text);
+    font-size: 2rem;
+    font-weight: 600;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.mauto {
+    margin: auto;
+}
+
+
+@keyframes loader {
+    0% {
+        background: linear-gradient(to right, var(--loader-start), var(--loader-mid));
+    }
+
+    50% {
+        background: linear-gradient(to right, var(--loader-mid), var(--loader-end));
+    }
+
+    100% {
+        background: linear-gradient(to left, var(--loader-end), var(--loader-start));
+    }
+}
+
+
+
+
+
+
+
+
+/* For tablets (768px and below) */
+@media (max-width: 768px) {
+    .container {
+        width: 95vw;
+        flex-direction: column;
+
+    }
+
+    ul {
+
+        gap: 30px;
+        height: 40px;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .box {
+        padding: 30px 0;
+
+    }
+
+
+}
+
+/* For large phones (600px and below) */
+@media (max-width: 600px) {
+    .container {
+        width: 95vw;
+    }
+
+    ul {
+        padding-left: 20px;
+        height: 40px;
+    }
+
+    .card {
+        width: 95%;
+    }
+
+    .box {
+        padding: 30px 0;
+        max-width: 350px;
+    }
+
+    .heading {
+        font-size: 1.5rem;
+    }
+
+    input {
+        font-size: 1rem;
+        line-height: 40px;
+        height: 40px;
+    }
+
+    input:focus+label,
+    input:valid+label {
+        transform: translate(2px, -20px) scale(0.8);
+        background-color: #2B2B2B;
+    }
+
+
+    .label-line {
+        font-size: 0.8rem;
+        line-height: 30px;
+        height: 30px;
+        margin: 5px 20px;
+
+
+    }
+
+    .submit {
+        padding: 5px 20px;
+    }
+}
+
+/* For small phones (400px and below) */
+@media (max-width: 400px) {
+    .container {
+        width: 95vw;
+        padding: 0 10px;
+    }
+
+
+
+    .card {
+        width: 100%;
+        padding: 5px 7px;
+    }
+
+
+
+    .box {
+        padding: 10px 0;
+        max-width: 300px;
+    }
+
+    .heading {
+        font-size: 1.6rem;
+    }
+
+
+}
+
+/* For extra small phones (320px and below) */
+@media (max-width: 320px) {
+    .container {
+        width: 95vw;
+        padding: 0 5px;
+        /* Reduced padding */
+    }
+
+    .card {
+        width: 100%;
+        padding: 5px;
+        /* Reduced padding */
+    }
+
+    .box {
+        padding: 8px 0;
+        /* Adjusted padding */
+        max-width: 280px;
+        /* Reduced max-width */
+    }
+
+    .heading {
+        font-size: 1.4rem;
+        /* Smaller font size */
+    }
+
+    input {
+        font-size: 0.9rem;
+        /* Slightly smaller font size */
+        line-height: 35px;
+        /* Adjusted line-height */
+        height: 35px;
+        /* Adjusted height */
+    }
+
+    .label-line {
+        font-size: 0.7rem;
+        /* Smaller font size */
+        line-height: 28px;
+        /* Adjusted line-height */
+        height: 28px;
+        /* Adjusted height */
+        margin: 5px 15px;
+        /* Reduced margin */
+    }
+
+    .submit {
+        padding: 5px 15px;
+        /* Adjusted padding */
+    }
+}
+
+/* For ultra small phones (280px and below) */
+@media (max-width: 280px) {
+    .container {
+        width: 95vw;
+        padding: 0 5px;
+        /* Keep padding minimal */
+    }
+
+    .card {
+        width: 100%;
+        padding: 4px;
+        /* Further reduced padding */
+    }
+
+    .box {
+        padding: 5px 0;
+        /* Reduced padding */
+        max-width: 260px;
+        /* Further reduced max-width */
+    }
+
+    .heading {
+        font-size: 1.2rem;
+        /* Further reduced font size */
+    }
+
+    input {
+        font-size: 0.8rem;
+        /* Further reduced font size */
+        line-height: 30px;
+        /* Adjusted line-height */
+        height: 30px;
+        /* Adjusted height */
+    }
+
+    .label-line {
+        font-size: 0.6rem;
+        /* Further reduced font size */
+        line-height: 20px;
+        /* Adjusted line-height */
+        height: 20px;
+        /* Adjusted height */
+        margin: 5px;
+        /* Reduced margin */
+    }
+
+
+    input:focus+label,
+    input:valid+label {
+        transform: translate(10px, -10px) scale(0.8);
+        background-color: #2B2B2B;
+    }
+
+
+    .submit {
+        padding: 4px 10px;
+        /* Adjusted padding */
+    }
+}
